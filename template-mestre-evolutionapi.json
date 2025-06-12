@@ -440,6 +440,48 @@
     },
     {
       "parameters": {
+        "method": "POST",
+        "url": "={{ $node[\"Configurações\"].json[\"calcomBaseUrl\"] }}/bookings",
+        "sendBody": true,
+        "jsonParameters": true,
+        "bodyParametersJson": "{\"eventTypeId\":\"={{ $node['Configurações'].json['calcomEventTypeId'] }}\",\"email\":\"={{ $json.LeadEmail }}\",\"name\":\"={{ $json.LeadNome }}\"}",
+        "options": {
+          "timeout": "={{ $node[\"Configurações\"].json[\"calcomTimeoutSeconds\"] }}"
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2000,
+        740
+      ],
+      "id": "33bcbce5-811d-4b03-b264-ff4fe8a75c7a",
+      "name": "Cal.com Agendamento"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "calcomLink",
+              "value": "={{ $json.body.bookingLink }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2140,
+        740
+      ],
+      "id": "40395248-55f5-41f8-9601-207db8e7829c",
+      "name": "Extrair Link Cal.com"
+    },
+    {
+      "parameters": {
         "operation": "get",
         "propertyName": "messages",
         "key": "={{ $('Dados Lead').item.json.IdConversa }}_buffer",
@@ -809,7 +851,8 @@
     },
     {
       "parameters": {
-        "options": {}
+        "options": {},
+        "batchSize": 5
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
@@ -1352,6 +1395,198 @@
         "assignments": {
           "assignments": [
             {
+              "name": "evolutionDomain",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "evolutionApiKey",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "evolutionTimeoutSeconds",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "openAiModel",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "openAiTemperature",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "openAiMaxTokens",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "openAiRetryCount",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "openAiRetryDelaySeconds",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "supabaseUrl",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "supabaseKey",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "supabaseSchema",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresHost",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresPort",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresDatabase",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresUser",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresPassword",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "postgresSsl",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "redisHost",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "redisPort",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "redisPassword",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "redisBufferKeyPrefix",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "inactivityWaitSeconds",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "maxBufferMessages",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "workerConcurrency",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "webhookReplicas",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "alertChannelWebhookUrl",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "alertEmailRecipient",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "errorRetryCount",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "errorRetryDelaySeconds",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomBaseUrl",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomApiKey",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomEventTypeId",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomLocationId",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomWebhookSecret",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "name": "calcomTimeoutSeconds",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -3600,
+        1000
+      ],
+      "id": "49c3c52c-6cf9-4905-8293-a1baa2c3a44f",
+      "name": "Configurações"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
               "id": "3bdce7b6-d0f1-442c-aafd-8cd123aa21b6",
               "name": "EsperaBuffer",
               "value": 15,
@@ -1491,7 +1726,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://{{SEU-DOMINIO-EVOLUTION}}/message/sendText/{{SUA-INSTANCIA-EVOLUTION}}",
+        "url": "={{ $node['Configurações'].json['evolutionDomain'] }}/message/sendText/{{SUA-INSTANCIA-EVOLUTION}}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
@@ -1503,7 +1738,7 @@
             },
             {
               "name": "text",
-              "value": "={{ $json['output.mensagens'] }}"
+              "value": "={{ $json['output.mensagens'] }} {{ $json.calcomLink }}"
             }
           ]
         },
@@ -1837,7 +2072,7 @@
       "main": [
         [
           {
-            "node": "AI Agent1",
+            "node": "Cal.com Agendamento",
             "type": "main",
             "index": 0
           }
@@ -2142,7 +2377,7 @@
       "main": [
         [
           {
-            "node": "Parametros Fluxo",
+            "node": "Configurações",
             "type": "main",
             "index": 0
           }
@@ -2243,6 +2478,39 @@
           {
             "node": "AI Agent1",
             "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurações": {
+      "main": [
+        [
+          {
+            "node": "Parametros Fluxo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cal.com Agendamento": {
+      "main": [
+        [
+          {
+            "node": "Extrair Link Cal.com",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extrair Link Cal.com": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
             "index": 0
           }
         ]
