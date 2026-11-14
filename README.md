@@ -40,6 +40,8 @@ Desenvolvo soluções de inteligência artificial e automação voltadas a opera
 **Engenharia civil**
 
 <img width="32" height="32" alt="autocad-32px" src="https://github.com/user-attachments/assets/65e4c7fb-523e-401a-aa98-afc4ff219eab" />
+<img width="32" height="32" alt="autodesk-revit-32px" src="https://github.com/user-attachments/assets/0858049b-ea0d-4881-88ac-77a5380fe892" />
+
 
 
 **Linguagens e desenvolvimento**
