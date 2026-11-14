@@ -39,7 +39,8 @@ Desenvolvo soluções de inteligência artificial e automação voltadas a opera
 
 **Engenharia civil**
 
-![AutoCAD](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/auto-cad.svg)
+<img width="32" height="32" alt="autocad-32px" src="https://github.com/user-attachments/assets/65e4c7fb-523e-401a-aa98-afc4ff219eab" />
+
 
 **Linguagens e desenvolvimento**
 
