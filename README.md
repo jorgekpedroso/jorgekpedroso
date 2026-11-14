@@ -39,7 +39,7 @@ Desenvolvo soluções de inteligência artificial e automação voltadas a opera
 
 **Engenharia civil**
 
-![AutoCAD]([https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white](https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/auto-cad.svg))
+![AutoCAD]([https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/auto-cad.svg])
 
 **Linguagens e desenvolvimento**
 
